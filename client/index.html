@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuraTalk AI - Advanced Chat Interface</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-content">
+            <div class="logo-container">
+                <div class="logo-text">NeuraTalk AI</div>
+                <div class="logo-subtitle">Advanced Neural Conversations</div>
+            </div>
+            <div class="welcome-description">
+                Experience the future of AI communication with multiple specialized models
+            </div>
+            <button class="btn btn--primary btn--lg cyber-button">
+                <span class="button-text">Initialize Neural Link</span>
+                <div class="button-glow"></div>
+            </button>
+        </div>
+        <div class="cyber-grid"></div>
+    </div>
+
+    <!-- Main Chat Interface -->
+    <div id="main-app" class="main-app hidden">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">NeuraTalk AI</h1>
+                <div class="header-controls">
+                    <button class="btn btn--outline btn--sm settings-btn">
+                        <span>Settings</span>
+                    </button>
+                    <button class="btn btn--outline btn--sm clear-btn">
+                        <span>Clear Chat</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Model Selection -->
+        <div class="model-selector-container">
+            <div class="model-selector-label">Select AI Model:</div>
+            <div class="model-selector-wrapper">
+                <select id="model-selector" class="model-selector">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+                <div class="model-indicator" id="model-indicator"></div>
+            </div>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+                <div class="welcome-message">
+                    <div class="system-message">
+                        <span class="system-icon">⚡</span>
+                        <span>Neural link established. Select a model above and start chatting!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Typing Indicator -->
+            <div id="typing-indicator" class="typing-indicator hidden">
+                <div class="typing-bubble">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="typing-text">AI is thinking...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Enter your message..." maxlength="500">
+                <button id="send-button" class="send-button">
+                    <span class="send-icon">→</span>
+                </button>
+            </div>
+            <div class="input-footer">
+                <span class="demo-notice">⚠️ Demo mode - Responses are simulated</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div id="settings-panel" class="settings-panel">
+        <div class="settings-content">
+            <div class="settings-header">
+                <h3>Neural Configuration</h3>
+                <button class="close-settings">×</button>
+            </div>
+            
+            <div class="settings-body">
+                <div class="setting-group">
+                    <label class="setting-label">Model Information</label>
+                    <div id="model-info" class="model-info">
+                        <div class="model-name">OpenAI GPT-4.1</div>
+                        <div class="model-description">General Intelligence - Balanced and knowledgeable responses</div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Temperature</label>
+                    <input type="range" id="temperature-slider" class="slider" min="0" max="2" step="0.1" value="1">
+                    <div class="slider-value">1.0</div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Max Tokens</label>
+                    <input type="range" id="max-tokens-slider" class="slider" min="100" max="2048" step="50" value="1000">
+                    <div class="slider-value">1000</div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">API Status</label>
+                    <div class="api-status">
+                        <span class="status-indicator demo">Demo Mode</span>
+                        <small>Using simulated responses</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="loading-text">Processing...</div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

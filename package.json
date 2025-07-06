@@ -1,0 +1,21 @@
+{
+  "name": "neuratalk-proxy-server",
+  "version": "1.0.0",
+  "description": "Proxy server for NeuraTalk AI to handle GitHub Models API calls",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "openai": "^4.20.1",
+    "@azure-rest/ai-inference": "^1.0.0-beta.3",
+    "@azure/core-auth": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
